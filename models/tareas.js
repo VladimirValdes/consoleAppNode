@@ -16,6 +16,7 @@ class Tareas  {
     get listadoArr() {
         const listado = [];
 
+        // Convirtiendo nuestro objeto a un array
         Object.keys(this._listado).forEach( key => {
             const tarea = this._listado[key];
 

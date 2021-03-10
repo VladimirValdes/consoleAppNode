@@ -5,8 +5,9 @@ const Choices = require('inquirer/lib/objects/choices');
 
 require('colors');
 
-
+// Creamos un arreglo con el objeto que contendra nuestras opciones
 const preguntas = [
+    
     {
         type: 'list',
         name: 'opcion',
@@ -53,6 +54,7 @@ const inquirerMenu = async() => {
     console.log('   Seleccione una opcion'.white);
     console.log('================================\n'.green);
 
+    // Mostramos nuestro menu y nos devuelve la opcion seleccionada
     const { opcion } = await inquirer.prompt(preguntas);
 
     return opcion;
@@ -122,7 +124,7 @@ const leerInput = async( message ) => {
             type: 'input',
             name: 'desc',
             message,
-            validate( value ) {
+            validate( value ) { // nos permite validar el valor ingresado por el usuario
 
                 if ( value.length === 0) {
                     return 'Por favor ingrese un valor'
